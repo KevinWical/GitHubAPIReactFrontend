@@ -2,22 +2,10 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import CircularProgress from '@mui/material/CircularProgress';
 
-// Access the GitHub token from environment variables
 const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
 
-const formatSize = (sizeInKB) => {
-  if (sizeInKB < 1024) {
-    return `${sizeInKB.toFixed(2)} KB`;
-  } else if (sizeInKB < 1024 * 1024) {
-    return `${(sizeInKB / 1024).toFixed(2)} MB`;
-  } else if (sizeInKB < 1024 * 1024 * 1024) {
-    return `${(sizeInKB / (1024 * 1024)).toFixed(2)} GB`;
-  } else {
-    return `${(sizeInKB / (1024 * 1024 * 1024)).toFixed(2)} TB`;
-  }
-};
-
 const SearchUsers = () => {
+  // state hooks
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [page, setPage] = useState(1);
@@ -53,6 +41,19 @@ const SearchUsers = () => {
 
   const handlePageChange = (newPage) => {
     searchUsers(newPage);
+  };
+
+  // helper for size of repo
+  const formatSize = (sizeInKB) => {
+    if (sizeInKB < 1024) {
+      return `${sizeInKB.toFixed(2)} KB`;
+    } else if (sizeInKB < 1024 * 1024) {
+      return `${(sizeInKB / 1024).toFixed(2)} MB`;
+    } else if (sizeInKB < 1024 * 1024 * 1024) {
+      return `${(sizeInKB / (1024 * 1024)).toFixed(2)} GB`;
+    } else {
+      return `${(sizeInKB / (1024 * 1024 * 1024)).toFixed(2)} TB`;
+    }
   };
 
   return (
