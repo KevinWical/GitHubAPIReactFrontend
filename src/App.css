@@ -1,38 +1,170 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* src/App.css */
+@media (max-width: 600px){
+  .App-header h1 {
+    font-size: 2em;
   }
+
+  nav ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+
+  .repo, .user {
+    width: 100%;
+    margin: 10px 0;
+    }
+}
+
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+body{
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.user img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-details h3 {
+  margin: 0;
+}
+
+.user-details p, .user-details ul {
+  margin: 5px 0;
+}
+
+.user-details ul {
+  padding-left: 20px;
+}
+
+.user-details a {
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.user-details a:hover {
+  text-decoration: underline;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input, select, button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.repo {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px;
+  width: 90%; /* Ensure the boxes fit within the screen */
+  max-width: 800px; /* Limit the maximum width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  background-color: #f9f9f9; /* Light background color for better visibility */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add a subtle shadow for better separation */
+  border-radius: 5px; /* Slightly rounded corners */
+  text-align: left; /* Align text to the left for better readability */
+}
+
+.repo h3 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+}
+
+.repo p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.repo a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.repo a:hover {
+  text-decoration: underline;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.button-container button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #0366d6;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.button-container button:disabled {
+  background-color: #ccc;
+}
+
+.button-container button:hover:not(:disabled) {
+  background-color: #024c9c;
 }
